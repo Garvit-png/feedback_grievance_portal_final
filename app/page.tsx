@@ -110,18 +110,18 @@ export default function Home() {
             </div>
           </div>
         ) : mode === "none" ? (
-          <div className="w-full text-center">
-            <div className="mb-14">
-              <h1 className="text-3xl sm:text-5xl font-black text-[var(--text)] mb-4 tracking-tighter leading-tight sm:leading-none whitespace-normal text-balance">
+          <div className="w-full text-center px-1 sm:px-0">
+            <div className="mb-10 sm:mb-14 max-w-[16rem] sm:max-w-none mx-auto">
+              <h1 className="text-[2rem] sm:text-5xl font-black text-[var(--text)] mb-4 tracking-[-0.04em] leading-[0.92] sm:leading-none whitespace-normal text-balance break-words">
                 <span className="block sm:inline">GRIEVANCE &</span>{" "}
                 <span className="block sm:inline text-[var(--primary)]">FEEDBACK</span>
               </h1>
-              <p className="text-[10px] sm:text-sm text-[var(--text-muted)] font-black uppercase tracking-[0.25em] sm:tracking-[0.4em] opacity-80">
+              <p className="text-[9px] sm:text-sm text-[var(--text-muted)] font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] opacity-80 px-2 sm:px-0">
                 Secure Anonymous Portal / AIRIS
               </p>
             </div>
 
-            <div className="flex flex-col gap-4 max-w-2xl mx-auto">
+            <div className="flex flex-col gap-4 max-w-2xl mx-auto px-0 sm:px-0">
               <button
                 onClick={() => setMode("grievance")}
                 className="w-full min-h-20 sm:h-24 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-5 sm:px-10 py-5 sm:py-0 bg-transparent border border-[var(--border)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] group"
