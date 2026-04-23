@@ -112,8 +112,9 @@ export default function Home() {
         ) : mode === "none" ? (
           <div className="w-full text-center">
             <div className="mb-14">
-              <h1 className="text-3xl sm:text-5xl font-black text-[var(--text)] mb-4 tracking-tighter leading-tight sm:leading-none whitespace-normal">
-                GRIEVANCE & <span className="text-[var(--primary)]">FEEDBACK</span>
+              <h1 className="text-3xl sm:text-5xl font-black text-[var(--text)] mb-4 tracking-tighter leading-tight sm:leading-none whitespace-normal text-balance">
+                <span className="block sm:inline">GRIEVANCE &</span>{" "}
+                <span className="block sm:inline text-[var(--primary)]">FEEDBACK</span>
               </h1>
               <p className="text-[10px] sm:text-sm text-[var(--text-muted)] font-black uppercase tracking-[0.25em] sm:tracking-[0.4em] opacity-80">
                 Secure Anonymous Portal / AIRIS
