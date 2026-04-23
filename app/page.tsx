@@ -63,35 +63,35 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] px-4 flex flex-col items-center justify-center relative overflow-hidden">
-      <header className="fixed top-0 left-0 p-8 md:p-12 z-40">
-        <div className="h-12 md:h-16 w-auto">
+      <header className="fixed top-0 left-0 p-4 sm:p-8 md:p-12 z-40">
+        <div className="h-10 sm:h-12 md:h-16 w-auto">
           <img src="/logo.png" alt="AIRIS Logo" className="h-full w-auto object-contain" />
         </div>
       </header>
       <main className="w-full max-w-4xl">
         {success ? (
-          <div className="max-w-xl mx-auto bg-[var(--surface)] rounded-xl p-10 shadow-2xl border border-[var(--border)] relative overflow-hidden text-center">
+          <div className="max-w-xl mx-auto bg-[var(--surface)] rounded-xl p-6 sm:p-10 shadow-2xl border border-[var(--border)] relative overflow-hidden text-center">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--primary)] to-transparent opacity-50"></div>
             <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-green-500/20">
               <svg className="w-8 h-8 text-[var(--success)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-4xl font-black text-[var(--text)] mb-3 tracking-tight uppercase">
+            <h2 className="text-3xl sm:text-4xl font-black text-[var(--text)] mb-3 tracking-tight uppercase">
               Received
             </h2>
-            <p className="text-[var(--text-muted)] mb-10 text-lg">
+            <p className="text-[var(--text-muted)] mb-10 text-base sm:text-lg">
               Your {mode === 'grievance' ? 'grievance' : 'feedback'} has been submitted securely and anonymously.
             </p>
-            <div className="bg-[var(--secondary)] rounded-xl p-8 mb-10 inline-block border border-[var(--border)] shadow-inner">
+            <div className="bg-[var(--secondary)] rounded-xl p-5 sm:p-8 mb-10 inline-block border border-[var(--border)] shadow-inner max-w-full">
               <p className="text-sm uppercase tracking-[0.3em] font-black text-[var(--text-muted)] mb-3">
                 Reference Tracking ID
               </p>
-              <p className="text-4xl font-mono font-black text-[var(--primary)] tracking-widest">
+              <p className="text-2xl sm:text-4xl font-mono font-black text-[var(--primary)] tracking-[0.2em] sm:tracking-widest break-all">
                 {trackingId}
               </p>
             </div>
-            <p className="text-base text-[var(--text-muted)] mb-10 max-w-sm mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-[var(--text-muted)] mb-10 max-w-sm mx-auto leading-relaxed">
               Please save this tracking ID. You will need it to check the status of your submission later.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -112,10 +112,10 @@ export default function Home() {
         ) : mode === "none" ? (
           <div className="w-full text-center">
             <div className="mb-14">
-              <h1 className="text-5xl font-black text-[var(--text)] mb-4 tracking-tighter leading-none whitespace-nowrap">
+              <h1 className="text-3xl sm:text-5xl font-black text-[var(--text)] mb-4 tracking-tighter leading-tight sm:leading-none whitespace-normal">
                 GRIEVANCE & <span className="text-[var(--primary)]">FEEDBACK</span>
               </h1>
-              <p className="text-sm text-[var(--text-muted)] font-black uppercase tracking-[0.4em] opacity-80">
+              <p className="text-[10px] sm:text-sm text-[var(--text-muted)] font-black uppercase tracking-[0.25em] sm:tracking-[0.4em] opacity-80">
                 Secure Anonymous Portal / AIRIS
               </p>
             </div>
@@ -123,52 +123,52 @@ export default function Home() {
             <div className="flex flex-col gap-4 max-w-2xl mx-auto">
               <button
                 onClick={() => setMode("grievance")}
-                className="w-full h-24 flex items-center justify-between px-10 bg-transparent border border-[var(--border)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] group"
+                className="w-full min-h-20 sm:h-24 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-5 sm:px-10 py-5 sm:py-0 bg-transparent border border-[var(--border)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] group"
               >
                 <div className="text-left">
-                  <h2 className="text-2xl font-black uppercase tracking-tight">
+                  <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight">
                     Submit Grievance
                   </h2>
-                  <p className="text-xs text-[var(--text-muted)] group-hover:text-white/70 font-bold uppercase tracking-widest mt-1">
+                  <p className="text-[10px] sm:text-xs text-[var(--text-muted)] group-hover:text-white/70 font-bold uppercase tracking-widest mt-1">
                     Serious concerns & incidents
                   </p>
                 </div>
-                <span className="text-2xl font-light opacity-30 group-hover:opacity-100">&rarr;</span>
+                <span className="text-2xl font-light opacity-30 group-hover:opacity-100 self-end sm:self-auto">&rarr;</span>
               </button>
 
               <button
                 onClick={() => setMode("feedback")}
-                className="w-full h-24 flex items-center justify-between px-10 bg-transparent border border-[var(--border)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] group"
+                className="w-full min-h-20 sm:h-24 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-5 sm:px-10 py-5 sm:py-0 bg-transparent border border-[var(--border)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] group"
               >
                 <div className="text-left">
-                  <h2 className="text-2xl font-black uppercase tracking-tight">
+                  <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight">
                     Share Feedback
                   </h2>
-                  <p className="text-xs text-[var(--text-muted)] group-hover:text-white/70 font-bold uppercase tracking-widest mt-1">
+                  <p className="text-[10px] sm:text-xs text-[var(--text-muted)] group-hover:text-white/70 font-bold uppercase tracking-widest mt-1">
                     Suggestions & thoughts
                   </p>
                 </div>
-                <span className="text-2xl font-light opacity-30 group-hover:opacity-100">&rarr;</span>
+                <span className="text-2xl font-light opacity-30 group-hover:opacity-100 self-end sm:self-auto">&rarr;</span>
               </button>
 
               <button
                 onClick={() => router.push("/check")}
-                className="w-full h-24 flex items-center justify-between px-10 bg-transparent border border-[var(--border)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] group"
+                className="w-full min-h-20 sm:h-24 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-5 sm:px-10 py-5 sm:py-0 bg-transparent border border-[var(--border)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] group"
               >
                 <div className="text-left">
-                  <h2 className="text-2xl font-black uppercase tracking-tight">
+                  <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight">
                     Check Status
                   </h2>
-                  <p className="text-xs text-[var(--text-muted)] group-hover:text-white/70 font-bold uppercase tracking-widest mt-1">
+                  <p className="text-[10px] sm:text-xs text-[var(--text-muted)] group-hover:text-white/70 font-bold uppercase tracking-widest mt-1">
                     Track existing submissions
                   </p>
                 </div>
-                <span className="text-2xl font-light opacity-30 group-hover:opacity-100">&rarr;</span>
+                <span className="text-2xl font-light opacity-30 group-hover:opacity-100 self-end sm:self-auto">&rarr;</span>
               </button>
             </div>
           </div>
         ) : (
-          <div className="w-full max-md max-w-md mx-auto">
+          <div className="w-full max-w-md mx-auto">
             <button
               onClick={resetForm}
               className="flex items-center gap-1 text-[var(--text-muted)] hover:text-[var(--text)] transition-colors font-mono text-sm mb-8 uppercase tracking-[0.3em]"
@@ -177,7 +177,7 @@ export default function Home() {
             </button>
 
             <div className="mb-8">
-              <h2 className="text-4xl font-black text-[var(--text)] uppercase tracking-tight mb-1">
+              <h2 className="text-3xl sm:text-4xl font-black text-[var(--text)] uppercase tracking-tight mb-1">
                 SUBMIT
               </h2>
               <p className="text-sm text-[var(--text-muted)] font-mono tracking-wide">
@@ -185,10 +185,10 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex gap-4 mb-6">
+            <div className="flex gap-3 mb-6">
               <button
                 onClick={() => setMode("grievance")}
-                className={`flex-1 h-12 flex items-center justify-center text-xs font-black uppercase tracking-[0.2em] border ${
+                className={`flex-1 h-12 flex items-center justify-center text-[10px] sm:text-xs font-black uppercase tracking-[0.16em] sm:tracking-[0.2em] border ${
                   mode === "grievance"
                     ? "bg-[var(--primary)] text-black border-[var(--primary)]"
                     : "bg-transparent text-[var(--text-muted)] border-[var(--border)] hover:bg-[var(--secondary)]"
@@ -198,7 +198,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => setMode("feedback")}
-                className={`flex-1 h-12 flex items-center justify-center text-xs font-black uppercase tracking-[0.2em] border ${
+                className={`flex-1 h-12 flex items-center justify-center text-[10px] sm:text-xs font-black uppercase tracking-[0.16em] sm:tracking-[0.2em] border ${
                   mode === "feedback"
                     ? "bg-[var(--primary)] text-black border-[var(--primary)]"
                     : "bg-transparent text-[var(--text-muted)] border-[var(--border)] hover:bg-[var(--secondary)]"
@@ -220,7 +220,7 @@ export default function Home() {
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
                   placeholder="TYPE HERE ..."
-                  className="w-full h-64 px-8 pt-8 pb-8 bg-[#0a0a0a] text-[var(--text)] placeholder-[#222] focus:outline-none border border-[var(--border)] focus:border-[var(--primary)] transition-all text-lg font-mono leading-relaxed resize-none shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)] focus:shadow-[0_0_20px_rgba(255,0,127,0.05)] rounded-sm"
+                  className="w-full h-56 sm:h-64 px-5 sm:px-8 pt-5 sm:pt-8 pb-5 sm:pb-8 bg-[#0a0a0a] text-[var(--text)] placeholder-[#222] focus:outline-none border border-[var(--border)] focus:border-[var(--primary)] transition-all text-base sm:text-lg font-mono leading-relaxed resize-none shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)] focus:shadow-[0_0_20px_rgba(255,0,127,0.05)] rounded-sm"
                   disabled={loading}
                 />
               </div>

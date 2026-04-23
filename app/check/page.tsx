@@ -88,7 +88,7 @@ function CheckStatusContent() {
           <img src="/logo.png" alt="AIRIS Logo" className="h-full w-auto object-contain" />
         </div>
       </header>
-      <main className="max-w-2xl mx-auto">
+      <main className="max-w-2xl mx-auto pt-14 md:pt-0">
         <button
           onClick={() => router.push("/")}
           className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--text)] mb-6 text-sm"
@@ -104,18 +104,18 @@ function CheckStatusContent() {
             Check Status
           </h1>
 
-          <form onSubmit={handleSubmit} className="flex gap-3">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
             <input
               type="text"
               value={trackingId}
               onChange={(e) => setTrackingId(e.target.value)}
               placeholder="Enter tracking ID"
-              className="flex-1 px-4 py-2.5 rounded-lg border border-[var(--border)] bg-black/40 text-[var(--text)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--primary)] focus:ring-1 focus:ring-[var(--primary)] transition-all"
+              className="flex-1 w-full px-4 py-2.5 rounded-lg border border-[var(--border)] bg-black/40 text-[var(--text)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--primary)] focus:ring-1 focus:ring-[var(--primary)] transition-all"
             />
             <button
               type="submit"
               disabled={loading}
-              className="px-5 py-2.5 bg-[var(--primary)] text-white rounded-lg font-bold hover:bg-[var(--primary-hover)] transition-all disabled:opacity-50 neon-glow uppercase text-xs tracking-widest"
+              className="w-full sm:w-auto px-5 py-2.5 bg-[var(--primary)] text-white rounded-lg font-bold hover:bg-[var(--primary-hover)] transition-all disabled:opacity-50 neon-glow uppercase text-xs tracking-widest"
             >
               {loading ? "..." : "Check"}
             </button>
@@ -143,7 +143,7 @@ function CheckStatusContent() {
         {data && (
           <div className="space-y-4">
             <div className="bg-[var(--surface)] rounded-xl p-5 shadow-sm border border-[var(--border)]">
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
                 <span className="text-sm text-[var(--text-muted)]">
                   {data.type === "grievance" ? "Grievance" : "Feedback"}
                 </span>
